@@ -15,7 +15,10 @@ class CustomerController extends Controller
         $this->forward('customer/list');
     }
 
+ HEAD
         /**
+        /**
+ 761d629 (Task 10.2 login/logout)
      *
      */
     public function listAction()
@@ -31,4 +34,6 @@ class CustomerController extends Controller
         $this->renderLayout();
     }
 
+ HEAD
+ 761d629 (Task 10.2 login/logout)
 }
