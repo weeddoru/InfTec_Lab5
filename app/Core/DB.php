@@ -51,9 +51,14 @@ class DB
 
         if ($result !== false) {
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
+ HEAD
         } else {
             return false;
         }
+        } else {
+            return false;
+        }
+ fb4c668 (Task 10.0 redirect)
     }
 
     /**
@@ -64,8 +69,12 @@ class DB
     {
         $dbh = $this->getConnection();
         $stmt = $dbh->prepare($sql);
+ HEAD
         $result = $stmt->execute($parameters);
         return $result;
+        $result = $stmt->execute($parameters);
+        return $result;
+ fb4c668 (Task 10.0 redirect)
     }
 
 
@@ -80,7 +89,10 @@ class DB
         );
         $statement = $dbh->prepare($sql);
 
+ HEAD
         $statement->execute(array($id));
+        $statement->execute(array($id));
+ fb4c668 (Task 10.0 redirect)
     }
 
     public function updateEntity(DbModelInterface $model, int $id, $values = [])
@@ -110,6 +122,9 @@ class DB
             Util::arrayToList($values, "?")
         );
         $statement = $dbh->prepare($sql);
+ HEAD
         return $statement->execute(array_values($values));
+        return $statement->execute(array_values($values));
+ fb4c668 (Task 10.0 redirect)
     }
 }
